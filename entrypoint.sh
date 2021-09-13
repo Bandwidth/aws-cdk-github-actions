@@ -61,6 +61,9 @@ function installPipRequirements(){
 }
 
 function runCdk(){
+  cdk --version
+  node --version
+  npm --version
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
 	cdk ${INPUT_CDK_SUBCOMMAND} ${*} "${INPUT_CDK_STACK}" 2>&1 | tee output.log
 	exitCode=${?}
