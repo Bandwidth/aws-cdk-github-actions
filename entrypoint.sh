@@ -62,8 +62,9 @@ function installPipRequirements(){
 
 function runCdk(){
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
-	output=$(cdk ${INPUT_CDK_SUBCOMMAND} ${*} "${INPUT_CDK_STACK}" 2>&1)
+	cdk ${INPUT_CDK_SUBCOMMAND} ${*} "${INPUT_CDK_STACK}" 2>&1 | tee output.log
 	exitCode=${?}
+	output=$(cat output.log)
 	echo ::set-output name=status_code::${exitCode}
 	echo "${output}"
 
