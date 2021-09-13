@@ -76,6 +76,8 @@ function runCdk(){
 	echo "cdk contents:"
 	ls -lt cdk.out/*
 	output=$(cat output.log)
+	echo "hi" > cdk.out/hi
+  ls -lt cdk.out/*
 
 	commentStatus="Failed"
 	if [ "${exitCode}" == "0" ]; then
