@@ -64,9 +64,8 @@ function runCdk(){
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
 	cdk ${INPUT_CDK_SUBCOMMAND} ${*} "${INPUT_CDK_STACK}" 2>&1 | tee output.log
 	exitCode=${?}
-	output=$(cat output.log)
 	echo ::set-output name=status_code::${exitCode}
-	echo "${output}"
+	output=$(cat output.log)
 
 	commentStatus="Failed"
 	if [ "${exitCode}" == "0" ]; then
