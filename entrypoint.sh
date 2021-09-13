@@ -64,6 +64,7 @@ function runCdk(){
   cdk --version
   node --version
   npm --version
+  mkdir -p cdk.out
   ls -lt
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
 	set -o pipefail
