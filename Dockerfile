@@ -1,7 +1,4 @@
-FROM alpine:3.14
-
-RUN apk --update --no-cache add nodejs npm python3 py3-pip jq curl bash git docker && \
-	ln -sf /usr/bin/python3 /usr/bin/python
+FROM robertd/alpine-aws-cdk:1.115.0
 
 COPY entrypoint.sh /entrypoint.sh
 
