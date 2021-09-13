@@ -72,6 +72,7 @@ function runCdk(){
 	set +o pipefail
 	echo ::set-output name=status_code::${exitCode}
 	ls -lt
+	ls -lt cdk.out
 	output=$(cat output.log)
 
 	commentStatus="Failed"
