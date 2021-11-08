@@ -5,6 +5,7 @@ RUN apk --update --no-cache add python3 py3-pip jq curl bash git docker && \
 
 #RUN chown -R 1001:121 "/.npm"
 #USER 1001:121
+RUN npm config set user 0 && npm config set unsafe-perm true
 
 COPY entrypoint.sh /entrypoint.sh
 
