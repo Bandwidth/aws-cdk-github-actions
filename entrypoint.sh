@@ -52,7 +52,11 @@ function runCdk(){
   cdk --version
   node --version
   npm --version
-#  mkdir -p cdk.out
+  user=$(stat -c "%U" node_modules)
+  group=$(stat -c "%G" node_modules)
+  echo "User = $user"
+  echo "Group = $group"
+  mkdir -p cdk.out
   echo "Before deleting directory"
   ls -lt
   rm -rf node_modules
