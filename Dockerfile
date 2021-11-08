@@ -4,11 +4,9 @@ RUN apk --update --no-cache add nodejs npm python3 py3-pip jq curl bash git dock
     ln -sf /usr/bin/python3 /usr/bin/python && \
     npm install -g aws-cdk
 
-#RUN chown -R 1001:121 "/.npm"
-#USER 1001:121
-#RUN npm config set user 0 && npm config set unsafe-perm true
+COPY --from=golang:alpine /usr/local/go/ /usr/local/go/
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 COPY entrypoint.sh /entrypoint.sh
-#ADD heimdallr /heimdallr
 
-#ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
