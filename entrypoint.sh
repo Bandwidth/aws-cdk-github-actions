@@ -18,9 +18,9 @@ function installAwsCdk(){
 	echo "Install aws-cdk ${INPUT_CDK_VERSION}"
 	if [ "${INPUT_CDK_VERSION}" == "latest" ]; then
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			npm install -g aws-cdk
+			npm install -g aws-cdk --unsafe-perm=true --allow-root
 		else
-			npm install -g aws-cdk >/dev/null 2>&1
+			npm install -g aws-cdk --unsafe-perm=true --allow-root >/dev/null 2>&1
 		fi
 
 		if [ "${?}" -ne 0 ]; then
@@ -30,9 +30,9 @@ function installAwsCdk(){
 		fi
 	else
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			npm install -g aws-cdk@${INPUT_CDK_VERSION}
+			npm install -g aws-cdk@${INPUT_CDK_VERSION} --unsafe-perm=true --allow-root
 		else
-			npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
+			npm install -g aws-cdk@${INPUT_CDK_VERSION} --unsafe-perm=true --allow-root >/dev/null 2>&1
 		fi
 
 		if [ "${?}" -ne 0 ]; then
