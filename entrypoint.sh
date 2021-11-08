@@ -52,11 +52,14 @@ function runCdk(){
   cdk --version
   node --version
   npm --version
-  user=$(stat -c "%U" node_modules)
-  group=$(stat -c "%G" node_modules)
+  user=$(stat -c "%u" node_modules)
+  group=$(stat -c "%g" node_modules)
   echo "User = $user"
   echo "Group = $group"
+  addgroup -g $group github
+  adduser -u $user -G github -D github
   mkdir -p cdk.out
+  chown github:github cdk.out
   echo "Before deleting directory"
   ls -lt
   rm -rf node_modules
