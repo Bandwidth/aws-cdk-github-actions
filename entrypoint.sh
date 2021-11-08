@@ -11,16 +11,16 @@ function parseInputs(){
 }
 
 function installTypescript(){
-	sudo npm install typescript
+	npm install typescript
 }
 
 function installAwsCdk(){
 	echo "Install aws-cdk ${INPUT_CDK_VERSION}"
 	if [ "${INPUT_CDK_VERSION}" == "latest" ]; then
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			sudo npm install -g aws-cdk
+			npm install -g aws-cdk
 		else
-			sudo npm install -g aws-cdk >/dev/null 2>&1
+			npm install -g aws-cdk >/dev/null 2>&1
 		fi
 
 		if [ "${?}" -ne 0 ]; then
@@ -30,9 +30,9 @@ function installAwsCdk(){
 		fi
 	else
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			sudo npm install -g aws-cdk@${INPUT_CDK_VERSION}
+			npm install -g aws-cdk@${INPUT_CDK_VERSION}
 		else
-			sudo npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
+			npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
 		fi
 
 		if [ "${?}" -ne 0 ]; then
