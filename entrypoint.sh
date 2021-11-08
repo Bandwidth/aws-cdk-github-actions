@@ -74,6 +74,8 @@ function runCdk(){
 	echo ::set-output name=status_code::${exitCode}
 	ls -lt
 	whoami
+	echo "test" > cdk.out/test.txt
+	cat cdk.out/test.txt
 	echo "cdk contents:"
 	ls -lt cdk.out
 	cat cdk.out/tree.json
