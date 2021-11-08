@@ -30,9 +30,9 @@ function installAwsCdk(){
 		fi
 	else
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			npm install -g aws-cdk@${INPUT_CDK_VERSION}
+			sudo npm install -g aws-cdk@${INPUT_CDK_VERSION}
 		else
-			npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
+			sudo npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
 		fi
 
 		if [ "${?}" -ne 0 ]; then
