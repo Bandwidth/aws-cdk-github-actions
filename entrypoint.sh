@@ -15,6 +15,7 @@ function installTypescript(){
 }
 
 function installAwsCdk(){
+  npm config set unsafe-perm true
 	echo "Install aws-cdk ${INPUT_CDK_VERSION}"
 	if [ "${INPUT_CDK_VERSION}" == "latest" ]; then
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
