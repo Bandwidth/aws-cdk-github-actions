@@ -64,7 +64,7 @@ function runCdk(){
   cdk --version
   node --version
   npm --version
-  mkdir -p cdk.out
+#  mkdir -p cdk.out
   echo "Before deleting directory"
   ls -lt
   rm -rf node_modules
