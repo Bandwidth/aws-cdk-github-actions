@@ -16,7 +16,19 @@ function installTypescript(){
 
 function installAwsCdk(){
 	echo "Install aws-cdk ${INPUT_CDK_VERSION}"
-	if [ "${INPUT_CDK_VERSION}" != "latest" ]; then
+	if [ "${INPUT_CDK_VERSION}" == "latest" ]; then
+		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
+			npm install -g aws-cdk
+		else
+			npm install -g aws-cdk >/dev/null 2>&1
+		fi
+
+		if [ "${?}" -ne 0 ]; then
+			echo "Failed to install aws-cdk ${INPUT_CDK_VERSION}"
+		else
+			echo "Successful install aws-cdk ${INPUT_CDK_VERSION}"
+		fi
+	else
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
 			npm install -g aws-cdk@${INPUT_CDK_VERSION}
 		else
