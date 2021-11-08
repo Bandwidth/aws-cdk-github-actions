@@ -75,7 +75,8 @@ function runCdk(){
 	ls -lt
 	whoami
 	echo "cdk contents:"
-	ls -lt cdk.out/*
+	ls -lt cdk.out
+	cat cdk.out/tree.json
 	output=$(cat output.log)
 	echo "hi" > cdk.out/hi
   ls -lt cdk.out/*
