@@ -65,8 +65,13 @@ function runCdk(){
   node --version
   npm --version
   mkdir -p cdk.out
+  echo "Before deleting directory"
+  ls -lt
   rm -rf node_modules
+  echo "After deleting directory"
+  ls -lt
   npm ci
+  echo "After running npm ci"
   ls -lt
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
 	set -o pipefail
