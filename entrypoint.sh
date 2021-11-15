@@ -14,23 +14,31 @@ function installTypescript(){
 	npm install typescript
 }
 
+function installNpmPackage(){
+	package=$1
+	echo "Install $package"
+	if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
+		npm install -g $package
+	else
+		npm install -g $package >/dev/null 2>&1
+	fi
+
+	if [ "${?}" -ne 0 ]; then
+		echo "Failed to install $package"
+	else
+		echo "Successful install $package"
+	fi
+}
+
 function installAwsCdk(){
 	version=$(cdk --version | cut -d ' ' -f 1)
-	if [ "${version}" == "${INPUT_CDK_VERSION}" ] || [ ${INPUT_CDK_VERSION} == "latest" ]; then
+	exitCode=${?}
+	if [ $exitCode -gt 0 ] && [ ${INPUT_CDK_VERSION} == "latest" ]; then
+    installNpmPackage aws-cdk
+	elif [ "${version}" == "${INPUT_CDK_VERSION}" ] || [ ${INPUT_CDK_VERSION} == "latest" ]; then
 		echo "aws-cdk is already installed at version ${version}"
 	else
-		echo "Install aws-cdk ${INPUT_CDK_VERSION}"
-		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-			npm install -g aws-cdk@${INPUT_CDK_VERSION}
-		else
-			npm install -g aws-cdk@${INPUT_CDK_VERSION} >/dev/null 2>&1
-		fi
-
-		if [ "${?}" -ne 0 ]; then
-			echo "Failed to install aws-cdk ${INPUT_CDK_VERSION}"
-		else
-			echo "Successful install aws-cdk ${INPUT_CDK_VERSION}"
-		fi
+		installNpmPackage aws-cdk@${INPUT_CDK_VERSION}
 	fi
 }
 
