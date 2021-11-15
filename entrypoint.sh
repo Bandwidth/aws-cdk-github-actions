@@ -16,7 +16,7 @@ function installTypescript(){
 
 function installAwsCdk(){
 	version=$(cdk --version | cut -d ' ' -f 1)
-	if [ "${version}" == "${INPUT_CDK_VERSION}" || ${INPUT_CDK_VERSION} == "latest" ]; then
+	if [ "${version}" == "${INPUT_CDK_VERSION}" ] || [ ${INPUT_CDK_VERSION} == "latest" ]; then
 		echo "aws-cdk is already installed at version ${version}"
 	else
 		echo "Install aws-cdk ${INPUT_CDK_VERSION}"
