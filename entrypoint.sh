@@ -31,11 +31,13 @@ function installNpmPackage(){
 }
 
 function installAwsCdk(){
-	version=$(cdk --version | cut -d ' ' -f 1)
+	rawVersion=$(cdk --version)
 	exitCode=${?}
-	if [ $exitCode -gt 0 ] && [ ${INPUT_CDK_VERSION} == "latest" ]; then
+	version=$(echo $rawVersion | cut -d ' ' -f 1)
+
+	if [ $exitCode -gt 0 ] && [ "${INPUT_CDK_VERSION}" == "latest" ]; then
     installNpmPackage aws-cdk
-	elif [ "${version}" == "${INPUT_CDK_VERSION}" ] || [ ${INPUT_CDK_VERSION} == "latest" ]; then
+	elif [ "${version}" == "${INPUT_CDK_VERSION}" ] || [ "${INPUT_CDK_VERSION}" == "latest" ]; then
 		echo "aws-cdk is already installed at version ${version}"
 	else
 		installNpmPackage aws-cdk@${INPUT_CDK_VERSION}
