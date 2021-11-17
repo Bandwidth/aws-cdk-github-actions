@@ -1,4 +1,4 @@
-FROM node:16-alpine3.13
+FROM node:16-alpine3.14
 
 RUN apk --update --no-cache add python3 py3-pip jq curl bash git docker && \
     ln -sf /usr/bin/python3 /usr/bin/python
