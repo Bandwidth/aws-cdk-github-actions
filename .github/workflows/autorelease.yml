@@ -54,6 +54,7 @@ jobs:
     needs: github-release
     runs-on: ubuntu-latest
     env:
+      REGISTRY: ghcr.io
       IMAGE_NAME: ${{github.repository}}
     permissions:
       contents: read
@@ -66,7 +67,7 @@ jobs:
       - name: Log in to the Container registry
         uses: docker/login-action@v1.0.0
         with:
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
