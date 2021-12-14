@@ -14,7 +14,7 @@ jobs:
           cdk_subcommand: init
           cdk_args: sample-app --language=typescript
           actions_comment: false
-          working_directory: newapp
+          working_dir: newapp
 
   test-default-value-docker-image-action:
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
           cdk_subcommand: init
           cdk_args: sample-app --language=typescript
           actions_comment: false
-          working_directory: newapp
+          working_dir: newapp
