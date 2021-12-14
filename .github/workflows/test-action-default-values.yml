@@ -7,19 +7,23 @@ jobs:
   test-default-value-git-action:
     runs-on: ubuntu-latest
     steps:
+      - run: mkdir newapp
       - name: CDK init
         uses: mrmeyers99/aws-cdk-github-actions@v2.0.9
         with:
           cdk_subcommand: init
           cdk_args: sample-app --language=typescript
           actions_comment: false
+          working_directory: newapp
 
   test-default-value-docker-image-action:
     runs-on: ubuntu-latest
     steps:
+      - run: mkdir newapp
       - name: CDK init
         uses: docker://ghcr.io/mrmeyers99/aws-cdk-github-actions:2.0.9
         with:
           cdk_subcommand: init
           cdk_args: sample-app --language=typescript
           actions_comment: false
+          working_directory: newapp
