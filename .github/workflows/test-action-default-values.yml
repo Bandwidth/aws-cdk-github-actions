@@ -11,6 +11,7 @@ jobs:
         uses: mrmeyers99/aws-cdk-github-actions@v2.0.9
         with:
           cdk_subcommand: init
+          cdk_args: sample-app --language=typescript
           actions_comment: false
 
   test-default-value-docker-image-action:
@@ -20,4 +21,5 @@ jobs:
         uses: docker://ghcr.io/mrmeyers99/aws-cdk-github-actions:2.0.9
         with:
           cdk_subcommand: init
+          cdk_args: sample-app --language=typescript
           actions_comment: false
