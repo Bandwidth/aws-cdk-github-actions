@@ -1,0 +1,23 @@
+name: Test Actions Default Values
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  test-default-value-git-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CDK init
+        uses: mrmeyers99/aws-cdk-github-actions@v2.0.9
+        with:
+          cdk_subcommand: init
+          actions_comment: false
+
+  test-default-value-docker-image-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CDK init
+        uses: docker://ghcr.io/mrmeyers99/aws-cdk-github-actions:2.0.9
+        with:
+          cdk_subcommand: init
+          actions_comment: false
