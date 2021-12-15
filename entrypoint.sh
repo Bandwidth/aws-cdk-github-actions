@@ -37,7 +37,7 @@ function installTypescript() {
 	then
 		installNpmPackage typescript local
 	else
-		installNpmPackage typescript@${INPUT_TYPESCRIPT_VERSION} global
+		installNpmPackage typescript@${INPUT_TYPESCRIPT_VERSION} local
 	fi
 }
 
