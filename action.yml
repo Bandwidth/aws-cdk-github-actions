@@ -11,6 +11,9 @@ inputs:
   cdk_version:
     description: 'AWS CDK version to install.'
     default: 'latest'
+  typescript_version:
+    description: 'Version of typescript to use.  If not passed, it will be determined from the package.json file.'
+    default: ''
   cdk_subcommand:
     description: 'AWS CDK subcommand to execute.'
     required: true
