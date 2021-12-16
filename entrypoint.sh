@@ -97,7 +97,8 @@ ${output}
 function main(){
 	parseInputs
 	cd ${GITHUB_WORKSPACE}/${INPUT_WORKING_DIR}
-	installNpmPackage typescript local
+	echo "run npm ci"
+	npm ci
 	installAwsCdk
 	installPipRequirements
 	runCdk ${INPUT_CDK_ARGS}
