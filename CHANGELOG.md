@@ -1,3 +1,19 @@
+# 2.1.0 - 16-12-2021
+
+## Unclassified Changes
+
+- Merge pull request [#20](https://github.com/mrmeyers99/aws-cdk-github-actions/issues20) from mrmeyers99/automatic-release-prs
+- Update changelog and manifest
+- Run docker as a non root user to work around permissions issue caused by upgrading to alpine 3.14 ([#19](https://github.com/mrmeyers99/aws-cdk-github-actions/issues19))
+- Merge pull request [#18](https://github.com/mrmeyers99/aws-cdk-github-actions/issues18) from mrmeyers99/automatic-release-prs
+- Merge pull request [#15](https://github.com/mrmeyers99/aws-cdk-github-actions/issues15) from mrmeyers99/automatic-release-prs
+
+## Changes
+
+### Features
+    
+- Run npm ci instead of npm install ([#21](https://github.com/mrmeyers99/aws-cdk-github-actions/issues21))
+
 # 2.0.10 - 15-12-2021
 
 ## Unclassified Changes
