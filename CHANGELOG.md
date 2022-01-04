@@ -1,3 +1,9 @@
+# 2.1.1 - 4-1-2022
+### Bug Fixes
+    
+- Fail if npm ci fails ([#25](https://github.com/mrmeyers99/aws-cdk-github-actions/issues25))
+- Pass input args to dockerfile ([#23](https://github.com/mrmeyers99/aws-cdk-github-actions/issues23))
+
 # 2.1.0 - 16-12-2021
 
 ## Unclassified Changes
