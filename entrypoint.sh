@@ -20,9 +20,9 @@ function installNpmPackage(){
 	elif [ "${INPUT_DEBUG_LOG}" == "true" ] && [ "$scope" == "global" ]; then
 		sudo npm install -g $package
 	elif [ "$scope" == "local" ]; then
-		npm install $package --log-level=error --no-fund --no-audit $package >/dev/null 2>&1
+		npm install $package --log-level=error --no-fund --no-audit $package
 	else
-		sudo npm install -g --log-level=error --no-fund --no-audit $package >/dev/null 2>&1
+		sudo npm install -g --log-level=error --no-fund --no-audit $package
 	fi
 
 	if [ "${?}" -ne 0 ]; then
@@ -38,6 +38,23 @@ function installAwsCdk(){
 	  installNpmPackage aws-cdk global
 	else
 		installNpmPackage aws-cdk@${INPUT_CDK_VERSION} global
+	fi
+}
+
+function npmCi(){
+	if [ -e "package.json" ]; then
+		echo "Run npm ci"
+		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
+			npm ci
+		else
+			npm ci --log-level=error --no-fund --no-audit
+		fi
+
+		if [ "${?}" -ne 0 ]; then
+			echo "Failed to run npm ci"
+		else
+			echo "Successful npm ci"
+		fi
 	fi
 }
 
@@ -97,8 +114,7 @@ ${output}
 function main(){
 	parseInputs
 	cd ${GITHUB_WORKSPACE}/${INPUT_WORKING_DIR}
-	echo "run npm ci"
-	npm ci
+	npmCi
 	installAwsCdk
 	installPipRequirements
 	runCdk ${INPUT_CDK_ARGS}
