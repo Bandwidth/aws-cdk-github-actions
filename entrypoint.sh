@@ -20,9 +20,9 @@ function installNpmPackage(){
 	elif [ "${INPUT_DEBUG_LOG}" == "true" ] && [ "$scope" == "global" ]; then
 		sudo npm install -g $package
 	elif [ "$scope" == "local" ]; then
-		npm install $package --log-level=error --no-fund --no-audit $package
+		npm install $package --log-level=error --no-fund --no-audit $package >/dev/null
 	else
-		sudo npm install -g --log-level=error --no-fund --no-audit $package
+		sudo npm install -g --log-level=error --no-fund --no-audit $package >/dev/null
 	fi
 
 	if [ "${?}" -ne 0 ]; then
@@ -47,7 +47,7 @@ function npmCi(){
 		if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
 			npm ci
 		else
-			npm ci --log-level=error --no-fund --no-audit
+			npm ci --log-level=error --no-fund --no-audit >/dev/null
 		fi
 
 		if [ "${?}" -ne 0 ]; then
