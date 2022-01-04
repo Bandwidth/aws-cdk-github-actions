@@ -32,3 +32,11 @@ outputs:
 runs:
   using: 'docker'
   image: './Dockerfile'
+  args:
+    - ${{ inputs.cdk_stack }}
+    - ${{ inputs.cdk_version }}
+    - ${{ inputs.cdk_subcommand }}
+    - ${{ inputs.cdk_args }}
+    - ${{ inputs.working_dir }}
+    - ${{ inputs.actions_comment }}
+    - ${{ inputs.debug_log }}
