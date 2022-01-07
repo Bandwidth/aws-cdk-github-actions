@@ -1,3 +1,8 @@
+# 2.2.0 - 7-1-2022
+### Features
+    
+- Create new version ([#30](https://github.com/Bandwidth/aws-cdk-github-actions/issues30))
+
 # 2.1.1 - 4-1-2022
 ### Bug Fixes
     
