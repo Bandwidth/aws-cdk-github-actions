@@ -1,3 +1,8 @@
+# 2.2.0 - 7-1-2022
+### Features
+    
+- BWDB-12692 Create new version in Bandwidth organization ([#26](https://github.com/Bandwidth/aws-cdk-github-actions/issues26))
+
 # 2.1.1 - 4-1-2022
 ### Bug Fixes
     
