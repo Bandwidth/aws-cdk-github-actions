@@ -32,7 +32,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3.10.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'Update changelog and manifest'
+          commit-message: 'BWDB-12750 Update changelog and manifest'
           title: 'ci: Release ${{ steps.ac.outputs.version }}'
           body: |
             Release v${{ steps.ac.outputs.version }}
