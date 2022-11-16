@@ -1,3 +1,9 @@
+# 2.2.1 - 16-11-2022
+
+## Unclassified Changes
+
+- MV-7574 Deprecation of set-output ([#32](https://github.com/Bandwidth/aws-cdk-github-actions/issues32))
+
 # 2.2.0 - 7-1-2022
 ### Features
     
