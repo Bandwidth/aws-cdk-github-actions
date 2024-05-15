@@ -1,3 +1,9 @@
+# 2.2.2 - 15-5-2024
+
+## Unclassified Changes
+
+- BWDB-17557 Upgrade to node 22 ([#34](https://github.com/Bandwidth/aws-cdk-github-actions/issues34))
+
 # 2.2.1 - 16-11-2022
 
 ## Unclassified Changes
