@@ -1,3 +1,15 @@
+# 2.2.3 - 11-9-2026
+
+## Unclassified Changes
+
+- BWDB-8518 [Snyk] Security upgrade node from 22-alpine3.18 to 22.22.0-alpine3.23
+
+## Changes
+
+### Bug Fixes
+    
+- Dockerfile to reduce vulnerabilities ([#38](https://github.com/Bandwidth/aws-cdk-github-actions/issues38))
+
 # 2.2.2 - 15-5-2024
 
 ## Unclassified Changes
