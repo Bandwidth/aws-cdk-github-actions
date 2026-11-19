@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  schemaVersion: v1.0.0
+  name: aws-cdk-github-actions
+  description: AWS-CDK GitHub Actions allow you to run cdk deploy and cdk diff and ... on your pull requests to help you review.
+  annotations:
+    github.com/project-slug: Bandwidth/aws-cdk-github-actions
+  organization: BW
+  buildPlatform: GitHub Actions
+spec:
+  type: GitHub Action
+  owner: github/band-numbers
+  lifecycle: Prototype
