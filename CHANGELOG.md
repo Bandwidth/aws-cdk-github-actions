@@ -1,3 +1,9 @@
+# 2.2.4 - 19-11-2026
+
+## Unclassified Changes
+
+- SWI-13628 - Add the Backstage catalog files ([#40](https://github.com/Bandwidth/aws-cdk-github-actions/issues40))
+
 # 2.2.3 - 23-10-2026
 
 ## Unclassified Changes
